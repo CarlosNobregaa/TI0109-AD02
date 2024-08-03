@@ -13,7 +13,7 @@ def test_questao07():
   assert q.day_period(5, 59, 59) == 0
   assert q.day_period(6, 0, 0) == 1
   assert q.day_period(11, 59, 59) == 1
-  assert q.day_period(11, 0, 0) == 2
+  assert q.day_period(11, 0, 0) == 1
   assert q.day_period(17, 59, 59) == 2
-  assert q.day_period(17, 0, 0) == 3
+  assert q.day_period(17, 0, 0) == 2
   assert q.day_period(23, 59, 59) == 3

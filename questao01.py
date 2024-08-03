@@ -1,17 +1,39 @@
-# Function to compute volume of a cone
-def volume(r: float, h: float) -> float | None:
-  # Implement your computations here
-  pass
+from math import sqrt, pi
 
-# Function to compute the surface area of a cone
+def volume(r: float, h: float) -> float | None:
+    if not isinstance(r, float) or not isinstance(h, float):
+        return None
+    elif h <= 0 or r <= 0:
+        return None
+    else:
+        V = (1/3) * pi * (r**2) * h
+        return V
+
 def area(r: float, h: float) -> float | None:
-  # Implement your computations here
-  pass
+    if not isinstance(r, float) or not isinstance(h, float):
+        return None
+    elif h <= 0 or r <= 0:
+        return None
+    else:
+        A = pi * r * (r + sqrt(r**2 + h**2))
+        return A
 
 def main():
-  # Implement here your code to read data and test your functions
-  pass
-
-if __name__=='__main__':
-  # If your module is being executed directly, run the main function.
-  main()
+    try:
+        h = float(input('Entre com a altura: '))
+        r = float(input('Entre com o raio da base: '))
+        vol = volume(r, h)
+        are = area(r, h)
+        if vol is not None:
+            print('Valor do volume: ', vol)
+        else:
+            print('Os valores devem ser números positivos.')
+        if are is not None:
+            print('Valor da área: ', are)  
+        else:
+            print('Os valores devem ser números positivos.')  
+    except ValueError:
+        print('Insira um número válido.')
+        
+if __name__ == '__main__':
+    main()
